@@ -56,9 +56,12 @@ services:
       - "9083:9083"
 
   hive-metastore-postgresql:
-    image: bde2020/hive-metastore-postgresql:2.3.0
+    image: postgres
     container_name: hive-metastore-postgresql
+    environment: 
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=password
     volumes:
       - ./metastore-postgresql/postgresql/data:/var/lib/postgresql/data
-    depends_on:
-      - datanode
+    ports:
+      - "54320:5432"
