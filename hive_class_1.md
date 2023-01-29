@@ -5,13 +5,13 @@ create database hive_db;
 use hive_db;
 
 create table department_data                                                                                                            
-    > (                                                                                                                                       
-    > dept_id int,                                                                                                                            
-    > dept_name string,                                                                                                                       
-    > manager_id int,                                                                                                                         
-    > salary int)                                                                                                                             
-    > row format delimited                                                                                                                    
-    > fields terminated by ','; 
+    (                                                                                                                                       
+    dept_id int,                                                                                                                            
+    dept_name string,                                                                                                                       
+    manager_id int,                                                                                                                         
+    salary int)                                                                                                                             
+    row format delimited                                                                                                                    
+    fields terminated by ','; 
     
 describe department_data;
 
@@ -26,13 +26,13 @@ set hive.cli.print.header = true;
 drop table department_data;
 
 create table department_data                                                                                                            
-    > (                                                                                                                                       
-    > dept_id int,                                                                                                                            
-    > dept_name string,                                                                                                                       
-    > manager_id int,                                                                                                                         
-    > salary int)                                                                                                                             
-    > row format delimited                                                                                                                    
-    > fields terminated by ','; 
+    (                                                                                                                                       
+    dept_id int,                                                                                                                            
+    dept_name string,                                                                                                                       
+    manager_id int,                                                                                                                         
+    salary int)                                                                                                                             
+    row format delimited                                                                                                                    
+    fields terminated by ','; 
 
 # Load data from hdfs location
 load data inpath '/tmp/depart_data.csv' into table department_data;
