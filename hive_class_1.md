@@ -107,3 +107,6 @@ create table employee_map_data
     map_keys(details) as distinct_map_keys,                                                                                                 
     map_values(details) as distinct_map_values                                                                                              
     from employee_map_data; 
+    
+  # Dataset for assignment
+  https://www.kaggle.com/datasets/imdevskp/corona-virus-report
