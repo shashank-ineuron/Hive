@@ -36,3 +36,16 @@ create table department_data
 
 # Load data from hdfs location
 load data inpath '/tmp/depart_data.csv' into table department_data;
+
+
+# Command to create external tables
+create external table department_date_external
+    (
+    dept_id int,
+    dept_name string,
+    manager_id int,
+    salary int
+    )
+    row format delimited
+    fields terminated by ','
+    location '/input_data/';
