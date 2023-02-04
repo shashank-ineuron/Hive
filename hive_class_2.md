@@ -28,3 +28,24 @@ create table csv_table
     
 # load data from local
 load data local inpath 'file:///config/workspace/csv_file.csv' into table csv_table;
+
+# download hive catalog jar file , if serde libraries are not imported
+
+https://repo1.maven.org/maven2/org/apache/hive/hcatalog/hive-hcatalog-core/0.14.0/
+
+# run add jar command on hive shell
+add jar file:///config/workspace/hive-hcatalog-core-0.14.0.jar;
+
+# create json table
+
+create table json_table                                                                                                                 
+    > ( name string,                                                                                                                          
+    > id int,                                                                                                                                 
+    > skills array<string>                                                                                                                    
+    > )                                                                                                                                       
+    > row format serde 'org.apache.hive.hcatalog.data.JsonSerDe'                                                                              
+    > stored as textfile; 
+    
+# load data into json
+
+load data local inpath 'file:///config/workspace/json_file.json' into table json_table;
