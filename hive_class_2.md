@@ -49,3 +49,16 @@ create table json_table
 # load data into json
 
 load data local inpath 'file:///config/workspace/json_file.json' into table json_table;
+    
+    
+# create a table which will store data in parquet
+
+create table sales_data_pq_final                                                                                                        
+    (                                                                                                                                       
+    product_type string,                                                                                                                    
+    total_sales int                                                                                                                         
+    )                                                                                                                                       
+    stored as parquet;  
+    
+# load data in parquet file
+from sales_data_v2 insert overwrite table sales_data_pq_final select *;
