@@ -39,12 +39,12 @@ add jar file:///config/workspace/hive-hcatalog-core-0.14.0.jar;
 # create json table
 
 create table json_table                                                                                                                 
-    > ( name string,                                                                                                                          
-    > id int,                                                                                                                                 
-    > skills array<string>                                                                                                                    
-    > )                                                                                                                                       
-    > row format serde 'org.apache.hive.hcatalog.data.JsonSerDe'                                                                              
-    > stored as textfile; 
+    ( name string,                                                                                                                          
+    id int,                                                                                                                                 
+    skills array<string>                                                                                                                    
+    )                                                                                                                                       
+    row format serde 'org.apache.hive.hcatalog.data.JsonSerDe'                                                                              
+    stored as textfile; 
     
 # load data into json
 
